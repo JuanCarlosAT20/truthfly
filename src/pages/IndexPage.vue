@@ -18,14 +18,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 flex justify-around">
-        <the-block-info :infoBlock="blocksinfo" />
-      </div>
-    </div>
-    <div>
-      <the-footer-info></the-footer-info>
-    </div>
+    <the-block-info :infoBlock="blocksinfo" />
+    <the-footer-info></the-footer-info>
   </q-page>
 </template>
 

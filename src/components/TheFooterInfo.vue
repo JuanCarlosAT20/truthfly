@@ -1,4 +1,8 @@
 <template>
+  <div></div>
+</template>
+
+<!-- <template>
   <div class="row q-mb-xl">
     <div
       class="col-12 col-md-6 containerInfo column items-center justify-center"
@@ -41,3 +45,4 @@
 }
 </style>
 
+ -->
