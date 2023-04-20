@@ -19,7 +19,7 @@
       </div>
     </div>
     <the-block-info :infoBlock="blocksinfo" />
-    <the-footer-info></the-footer-info>
+    <the-footer-info />
   </q-page>
 </template>
 
@@ -29,7 +29,7 @@ import TheBlockInfo from "../components/TheBlockInfo.vue";
 import fakenews1 from "../assets/fakenews1.png";
 import fakenews2 from "../assets/fakenews2.png";
 import fakenews3 from "../assets/fakenews3.png";
-import TheFooterInfo from "src/components/TheFooterInfo.vue";
+import TheFooterInfo from "../components/TheFooterInfo.vue";
 
 export default defineComponent({
   components: { TheBlockInfo, TheFooterInfo },

@@ -1,19 +1,23 @@
 <template>
   <q-layout>
-    <q-header class="header">
-      <router-link to="/">
-        <q-img src="../assets/firefly.png" class="header__img"></q-img>
-      </router-link>
-      <span class="header__title">Truthfly</span>
-      <q-list class="header__nav">
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+    <q-header class="header row">
+      <div class="col-md-4">
+        <router-link to="/" class="header__logo">
+          <q-img src="../assets/firefly.png" class="header__img" />
+          <span class="header__title">Truthfly</span>
+        </router-link>
+      </div>
+      <div class="col-md-8">
+        <q-list class="header__nav">
+          <EssentialLink
+            class="col-md-8 header__nav-a"
+            v-for="link in essentialLinks"
+            :key="link.title"
+            v-bind="link"
+          />
+        </q-list>
+      </div>
     </q-header>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -28,6 +32,10 @@
   color: rgba(14, 6, 114, 1);
   height: 117px;
 }
+
+.header__logo {
+  text-decoration: none;
+}
 .header__img {
   width: 72px;
   height: 77px;
@@ -35,11 +43,16 @@
 }
 .header__title {
   font-size: x-large;
+  text-decoration: none;
 }
 .header__nav {
-  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  font-size: 24px;
+  margin-left: 14rem;
+}
+
+.header__nav-a {
+  margin: 0 2rem 0 3rem;
 }
 </style>
 
