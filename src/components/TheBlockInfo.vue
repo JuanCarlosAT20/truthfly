@@ -21,10 +21,8 @@
 <style scoped>
 .blockInfo {
   width: 100rem;
-  height: 20rem;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
 }
 
 .blockInfo__card {
@@ -33,11 +31,9 @@
 }
 .blockInfo__description {
   width: 100%;
-  height: 8rem;
 }
 .blockInfo__img {
   width: 100%;
-  height: 280px;
 }
 </style>
 

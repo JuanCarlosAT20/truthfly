@@ -42,7 +42,7 @@
 .footer__left-text-body {
   font-size: 24px;
   width: 32rem;
-  margin: 0 auto auto 7.7rem;
+  margin: 0 auto auto auto;
 }
 </style>
 

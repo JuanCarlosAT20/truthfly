@@ -1,20 +1,45 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="row">
-      <div class="col-12 col-md-3">
+    <div v-if="$q.screen.gt.sm" class="row main" style="height:580px">
+      <div class="col-12 col-md-4" style="z-index: -1;">
         <img class="bell-img" alt="Bell" src="../assets/bell.png" />
       </div>
-      <div class="col-12 col-md-9">
+      <div class="col-12 col-md-7" style="margin-left: 20px;">
         <div>
-          <span class="text-h1 main-text"
+          <span
+            class="text-h1 main-text"
+            style="font-weight: normal; color: #0e0672"
             >Puedes identificar la noticia falsa?</span
           >
         </div>
         <div>
-          <span class="main-text_subtitle"
+          <span class="main-text-subtitle"
+            >Toma nuestro test para saber que tanto conoces acerca de noticias
+            falsas</span
+          >
+          <base-button />
+        </div>
+      </div>
+    </div>
+    <div v-else class="row" style="height:600px">
+      <div class="main-sm-down">
+        <div class="main-background"></div>
+        <!-- <img class="bell-img" alt="Bell" src="../assets/bell.png" /> -->
+      </div>
+      <div class="main-content">
+        <div>
+          <span
+            class="text-h1 main main-text-responsive"
+            style="font-weight: normal; color: white;"
+            >Puedes identificar la noticia falsa?</span
+          >
+        </div>
+        <div>
+          <span class="text-h6 main-text-subtitle" style="color: white"
             >Toma nuestro test para ver que tanto sabes acerca de noticias
             falsas</span
           >
+          <base-button />
         </div>
       </div>
     </div>
@@ -60,6 +85,38 @@ export default defineComponent({
 </script>
 
 <style>
+.main-responsive {
+  margin-bottom: 20px;
+}
+
+.main-content {
+  margin:10%
+}
+
+.main {
+  padding-top: 120px;
+}
+
+.main-sm-down {
+  background-image: url("../assets/bell.png");
+  background-color: white;
+  height: 22%;
+  width: 100%;
+  z-index: -1;
+  background-size: cover;
+  position: absolute;
+}
+
+.main-background {
+  background-color: #4b3f96;
+  opacity: 0.5;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+}
+
 .bell-img {
   width: 370px;
   height: 355px;
@@ -69,10 +126,21 @@ export default defineComponent({
 .main-text {
   width: 891px;
   height: 386px;
+  font-size: 70px;
+}
+
+.main-text-responsive {
+  width: 891px;
+  height: 500px;
+  margin-top: 300px;
 }
 
 .main-text-subtitle {
-  width: 502px;
-  height: 58px;
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
