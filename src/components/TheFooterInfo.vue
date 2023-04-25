@@ -1,48 +1,45 @@
 <template>
   <div class="footer row">
     <div class="footer__left col-md-6 col-12">
-      <span class="footer__left-text">¿Aprendiste algo nuevo?</span>
-      <span class="footer__left-text-body"
+      <span class="footer__left-text" :style="{'font-size': $q.screen.gt.xs ? '40px' : '30px'}">¿Aprendiste algo nuevo?</span>
+      <span class="footer__left-text-body" :style="{'font-size': $q.screen.gt.xs ? '20px' : '16px'}"
         >Si te gusto este contenido y crees que le pueda servir a alguien mas,
         no dudes en compartirlo con tus conocidos y amigos!
       </span>
     </div>
     <div class="footer__right col-md-6 col-12">
-      <q-img class="footer_right-img" src="../assets/fakenews4.png" />
+      <q-img align="center" class="footer_right-img" src="../assets/fakenews4.png" />
     </div>
   </div>
 </template>
 
 <style scoped>
 .footer {
-  width: 150rem;
-  height: 30rem;
-  margin: 15rem 0;
+  width: 100%;
+  margin: 5rem 0;
 }
 
 .footer__left {
   background-color: rgba(14, 6, 114, 1);
   color: white;
   display: flex;
+  height: 26rem;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
-.footer__right {
+/* .footer__right {
   background-color: blueviolet;
-}
+} */
 
 .footer__left-text {
   font-weight: 400;
-  font-size: 48px;
   margin: auto auto 0 auto;
 }
 
 .footer__left-text-body {
-  font-size: 24px;
-  width: 32rem;
-  margin: 0 auto auto auto;
+  margin: 0 5% auto 5%;
 }
 </style>
 

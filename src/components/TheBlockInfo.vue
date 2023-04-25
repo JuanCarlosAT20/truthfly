@@ -1,41 +1,22 @@
 <template>
-  <div class="blockInfo">
+  <div class="blockInfo" :style="{'flex-wrap': $q.screen.gt.sm ? '' : 'wrap'}">
     <q-card
       flat
       class="blockInfo__card"
       v-for="(info, index) in infoBlock"
       :key="index"
     >
-      <q-card-section class="blockInfo__description">
+      <q-card-section class="blockInfo__description" style="font-size: 20px">
         <span>{{ info.textBlock }}</span>
       </q-card-section>
-      <q-img class="blockInfo__img" :src="info.imgBlock"></q-img>
+      <q-img class="blockInfo__img" :style="{'height': $q.screen.gt.xs ? '250px' : '150'}" :src="info.imgBlock"></q-img>
 
       <q-card-actions align="center">
-        <base-button />
+        <base-button :route="info.route" />
       </q-card-actions>
     </q-card>
   </div>
 </template>
-
-<style scoped>
-.blockInfo {
-  width: 100rem;
-  display: flex;
-  justify-content: center;
-}
-
-.blockInfo__card {
-  max-width: 230px;
-  margin: 0 3.5rem;
-}
-.blockInfo__description {
-  width: 100%;
-}
-.blockInfo__img {
-  width: 100%;
-}
-</style>
 
 <script>
 import BaseButton from "../components/BaseButton.vue";
@@ -45,10 +26,36 @@ export default {
   props: {
     infoBlock: {
       type: Array,
-      required: true,
     },
   },
 };
 </script>
+
+<style scoped>
+.blockInfo {
+  width: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blockInfo__card {
+  width: 40%;
+  max-width: 230px;
+  margin: 0 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.blockInfo__description {
+  width: 100%;
+  height: 100px;
+}
+.blockInfo__img {
+  width: 100%;
+  align-items: center;
+  
+}
+
+</style>
 
 
