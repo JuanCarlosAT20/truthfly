@@ -11,6 +11,18 @@
             "
           ></div>
           <div class="headerBlock">
+            <!-- AQUI EMPIEZA TEST -->
+            <title-question
+              :title="quiz?.title"
+              :subtitle="quiz?.subtitle"
+            ></title-question>
+            <div v-for="contentItem in quiz?.content" :key="contentItem.id">
+              <questions-block
+                :quizItem="contentItem"
+                :setChosenAnswerItems="setChosenAnswerItems"
+              />
+            </div>
+            <!-- AQUI TERMINA TEST -->
             <span>Test de las noticias falsas</span>
           </div>
           <div>
@@ -73,17 +85,48 @@
   </q-page>
 </template>
 
-
 <script>
 import { ref } from "vue";
-
+import TitleQuestion from "src/components/TitleQuestion.vue";
+import QuestionsBlock from "src/components/QuestionsBlock.vue";
 export default {
+  components: {
+    TitleQuestion,
+    QuestionsBlock,
+  },
+  async created() {
+    try {
+      const response = await fetch("http://localhost:8000/quiz");
+      const json = await response.json();
+      this.setQuiz(json);
+      console.log(this.chosenAnswerItems);
+    } catch (error) {
+      console.log(error);
+    }
+  },
   setup() {
+    const quiz = ref(false);
+    const chosenAnswerItems = ref([]);
+
+    function setChosenAnswerItems(value) {
+      chosenAnswerItems.value = value;
+    }
+    function setQuiz(value) {
+      quiz.value = value;
+    }
     return {
+      quiz,
+      setQuiz,
+      chosenAnswerItems,
+      setChosenAnswerItems,
       expanded: ref(false),
       lorem:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
+  },
+  methods: {
+    fetchData() {},
+    useEffect() {},
   },
 };
 </script>
