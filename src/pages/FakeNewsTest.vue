@@ -1,112 +1,40 @@
 <template>
   <q-page>
-    <div class="row">
-      <div style="max-width: 901px" class="container">
-        <div class="q-mt-xl q-ml-xl">
-          <div
-            style="
-              background-color: rgba(14, 6, 114, 1);
-              width: 70px;
-              height: 8px;
-            "
-          ></div>
-          <div class="headerBlock">
-            <!-- AQUI EMPIEZA TEST -->
-            <title-question
-              :title="quiz?.title"
-              :subtitle="quiz?.subtitle"
-            ></title-question>
-            <div v-for="contentItem in quiz?.content" :key="contentItem.id">
-              <questions-block
-                :quizItem="contentItem"
-                :setChosenAnswerItems="setChosenAnswerItems"
-              />
-            </div>
-            <!-- AQUI TERMINA TEST -->
-            <span>Test de las noticias falsas</span>
-          </div>
-          <div>
-            <span
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Pariatur nesciunt provident sed at autem debitis, temporibus iusto
-              vero in cumque laborum dicta explicabo! Explicabo, repudiandae
-              maxime libero esse error deleniti!</span
-            >
-          </div>
-        </div>
-        <div class="q-pa-md row items-start q-gutter-md">
-          <q-card flat bordered>
-            <q-card-section>
-              <div>
-                <span style="color: rgba(14, 6, 114, 1)"
-                  >1.¿Cual consideras que es una pagina de noticias
-                  sospechosa?</span
-                >
-              </div>
-            </q-card-section>
-            <q-card-section>
-              <div
-                style="
-                  width: 798px;
-                  height: 4px;
-                  background-color: rgba(233, 239, 253, 1);
-                "
-              ></div>
-            </q-card-section>
-            <q-card-actions>
-              <div style="margin-left: 100px">
-                <q-img class="selects" src="../assets/rectangle.png"></q-img>
-                <q-img class="selects" src="../assets/rectangle.png"></q-img>
-                <q-img class="selects" src="../assets/rectangle.png"></q-img>
-                <q-img class="selects" src="../assets/rectangle.png"></q-img>
-              </div>
-            </q-card-actions>
-
-            <q-card-section>
-              <div class="answerSection">
-                <div class="q-ml-md q-mt-md answerSection_text">
-                  <div>
-                    <span>Correcto!</span>
-                  </div>
-                  <div class="q-mt-md">
-                    <span
-                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </q-card-section>
-          </q-card>
-        </div>
-      </div>
+    <div>
+      <!-- AQUI EMPIEZA TEST -->
+      <quiz-questions />
+      <!-- AQUI TERMINA TEST -->
     </div>
   </q-page>
 </template>
 
 <script>
 import { ref } from "vue";
-import TitleQuestion from "src/components/TitleQuestion.vue";
-import QuestionsBlock from "src/components/QuestionsBlock.vue";
+import QuizQuestions from "src/components/QuizQuestions.vue";
+
 export default {
-  components: {
-    TitleQuestion,
-    QuestionsBlock,
+  components: { QuizQuestions },
+  data() {
+    return {};
   },
   async created() {
     try {
       const response = await fetch("http://localhost:8000/quiz");
       const json = await response.json();
       this.setQuiz(json);
-      console.log(this.chosenAnswerItems);
     } catch (error) {
       console.log(error);
     }
+    console.log(this.unansweredQuestionIds);
   },
   setup() {
     const quiz = ref(false);
     const chosenAnswerItems = ref([]);
+    const unansweredQuestionIds = ref([]);
+
+    function setUnansweredQuestionIds(value) {
+      unansweredQuestionIds.value = value;
+    }
 
     function setChosenAnswerItems(value) {
       chosenAnswerItems.value = value;
@@ -119,14 +47,20 @@ export default {
       setQuiz,
       chosenAnswerItems,
       setChosenAnswerItems,
+      unansweredQuestionIds,
+      setUnansweredQuestionIds,
       expanded: ref(false),
       lorem:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
   },
-  methods: {
-    fetchData() {},
-    useEffect() {},
+  methods: {},
+  mounted() {
+    const unanserredIds =
+      this.quiz && this.quiz.content
+        ? this.quiz.content.map(({ id }) => id)
+        : [];
+    this.setUnansweredQuestionIds(unanserredIds);
   },
 };
 </script>
