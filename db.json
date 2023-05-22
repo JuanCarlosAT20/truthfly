@@ -1,58 +1,268 @@
 {
   "preguntas": [
     {
-      "pregunta": "¿Qué tipo de comida prefieres?",
+      "pregunta": "1. ¿Qué son las noticias falsas?",
       "opciones": [
         {
-          "texto": "Hamburguesa",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Anuncios verdaderos",
+          "imagen": ""
         },
         {
-          "texto": "Pizza",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Anuncios sensacionalistas",
+          "imagen": ""
         },
         {
-          "texto": "Sushi",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Anuncios publicitarios",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [1]
+    },
+    {
+      "pregunta": "2. ¿Cuál es el objetivo de las noticias falsas?",
+      "opciones": [
+        {
+          "texto": "Convencer a una gran masa sobre información que no es real.",
+          "imagen": ""
+        },
+        {
+          "texto": "Informar a la población de manera veraz.",
+          "imagen": ""
+        },
+        {
+          "texto": "Desprestigiar campañas electorales",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores",
+          "imagen": ""
         }
       ],
       "respuestasCorrectas": [0]
     },
     {
-      "pregunta": "¿Qué tipo de música te gusta?",
+      "pregunta": "3. ¿En qué plataformas se difunden comúnmente las noticias falsas?",
       "opciones": [
         {
-          "texto": "Rock",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Sitios web de instituciones.",
+          "imagen": ""
         },
         {
-          "texto": "Pop",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Mensajería instantánea.",
+          "imagen": ""
         },
         {
-          "texto": "Electrónica",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Redes sociales como Facebook, Twitter o Whatsapp.",
+          "imagen": ""
+        },
+        {
+          "texto": "Redes sociales como Facebook, Twitter o Whatsapp.",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [3]
+    },
+    {
+      "pregunta": "4. ¿Qué es lo que más afecta la difusión de las noticias falsas? ",
+      "opciones": [
+        {
+          "texto": "La veracidad de la información compartida.",
+          "imagen": ""
+        },
+        {
+          "texto": "La cantidad de información en línea.",
+          "imagen": ""
+        },
+        {
+          "texto": "La inmediatez que ofrecen las redes sociales.",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores.",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [2]
+    },
+    {
+      "pregunta": "5. ¿Cuál es la mayor consecuencia de las noticias falsas? ",
+      "opciones": [
+        {
+          "texto": "La información veraz.",
+          "imagen": ""
+        },
+        {
+          "texto": "La propagación de discursos de odio.",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores.",
+          "imagen": ""
+        },
+        {
+          "texto": "La desinformación masiva.",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [3]
+    },
+    {
+      "pregunta": "6. ¿Cuál de las siguientes imágenes no representa una noticia falsa?",
+      "opciones": [
+        {
+          "texto": "1",
+          "imagen": "https://i.imgur.com/GOzPlkQ.png"
+        },
+        {
+          "texto": "2",
+          "imagen": "https://i.imgur.com/VTBxfG9.png"
+        },
+        {
+          "texto": "3",
+          "imagen": "https://i.imgur.com/PkPCqSQ.png"
+        },
+        {
+          "texto": "4",
+          "imagen": "https://i.imgur.com/srLxoIr.jpg"
+        }
+      ],
+      "respuestasCorrectas": [2]
+    },
+    {
+      "pregunta": "7. ¿Qué recomendación se da para identificar una noticia falsa?",
+      "opciones": [
+        {
+          "texto": "No leer la información completa.",
+          "imagen": ""
+        },
+        {
+          "texto": "Confirmar la fuente.",
+          "imagen": ""
+        },
+        {
+          "texto": "Basar la búsqueda de información en cuentas no verificadas.",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores.",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [1]
+    },
+    {
+      "pregunta": "8. ¿Cuál es una herramienta útil para confirmar la veracidad de una noticia?",
+      "opciones": [
+        {
+          "texto": "Leer solo el titular.",
+          "imagen": ""
+        },
+        {
+          "texto": "Percatarse del medio de difusión.",
+          "imagen": ""
+        },
+        {
+          "texto": "Basar la búsqueda de información en cuentas no verificadas.",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores.",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [1]
+    },
+    {
+      "pregunta": "9. ¿Qué se recomienda hacer al momento de leer y compartir una noticia?",
+      "opciones": [
+        {
+          "texto": "Adoptar una actitud reflexiva.",
+          "imagen": ""
+        },
+        {
+          "texto": "Compartir sin cuestionar la veracidad.",
+          "imagen": ""
+        },
+        {
+          "texto": "Dudar de la información en redes sociales.",
+          "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores.",
+          "imagen": ""
+        }
+      ],
+      "respuestasCorrectas": [3]
+    },
+    {
+      "pregunta": "10. ¿Cuál consideras que es una página de noticias sospechosas? ",
+      "opciones": [
+        {
+          "texto": "1",
+          "imagen": "https://i.imgur.com/Uc8GpP8.png"
+        },
+        {
+          "texto": "2",
+          "imagen": "https://i.imgur.com/mYJBTr2.jpg"
+        },
+        {
+          "texto": "3",
+          "imagen": "https://i.imgur.com/dMc0t5a.png"
+        },
+        {
+          "texto": "4",
+          "imagen": "https://i.imgur.com/kZSkGTQ.png"
+        }
+      ],
+      "respuestasCorrectas": [3]
+    },
+    {
+      "pregunta": "11. ¿Cuál de estas noticias es verdadera?",
+      "opciones": [
+        {
+          "texto": "Según una investigación, la vacuna contra el COVID-19 puede modificar tu ADN y causar enfermedades graves.",
+          "imagen": ""
+        },
+        {
+          "texto": "Una mujer asegura haber sido secuestrada por extraterrestres y llevada a Marte durante una semana.",
+          "imagen": ""
+        },
+        {
+          "texto": "Un estudio revela que la música puede ayudar a reducir la ansiedad y el estrés en pacientes hospitalizados.",
+          "imagen": ""
+        },
+        {
+          "texto": "Un famoso actor de Hollywood se casa con su perro y planea tener hijos con él.",
+          "imagen": ""
         }
       ],
       "respuestasCorrectas": [0]
     },
     {
-      "pregunta": "¿Qué tipo de actividad prefieres hacer los fines de semana?",
+      "pregunta": "12. ¿Qué emociones experimentas después de haber caído en una noticia falsa?",
       "opciones": [
         {
-          "texto": "Ver películas",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Decepción y desconfianza.",
+          "imagen": ""
         },
         {
-          "texto": "Ir a la playa",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Frustración y enojo.",
+          "imagen": ""
         },
         {
-          "texto": "Ir de compras",
-          "imagen": "https://images.unsplash.com/photo-1683220642973-a4d0ca134714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          "texto": "Ansiedad y preocupación.",
+          "imagen": ""
+        },
+        {
+          "texto": "Todas las anteriores.",
+          "imagen": ""
         }
       ],
-      "respuestasCorrectas": [0]
+      "respuestasCorrectas": [3]
     }
   ]
 }
