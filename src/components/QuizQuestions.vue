@@ -206,7 +206,6 @@ export default {
 </script>
 <style scoped>
 .quiz-container {
-  max-width: 500px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;

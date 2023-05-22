@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="row" style="margin-top: 80px">
+    <div class="row" style="margin-top: 80px; text-align: justify;">
       <div style="max-width: 901px;" class="container">
         <div
           style="
@@ -57,7 +57,7 @@
             </span>
           </div>
           <div>
-            <q-img size="70%" height="334" src="../assets/sobrenoticias1.png" style="margin-top: 30px; margin-bottom: 30px;"/>
+            <q-img size="70%" height="334" src="../assets/sobrenoticias3.png" style="margin-top: 30px; margin-bottom: 30px;"/>
           </div>
           <div>
             Es por ello, que es de suma importancia analizar el origen de las fake news y poner en cuestión este tema que involucra la forma de consumir datos. Este tipo de noticias generalmente se aprovechan de la inmediatez que ofrecen las redes sociales y de la facilidad que brindan para compartir cualquier contenido rápidamente de una manera muy emocional.
@@ -114,6 +114,7 @@ export default {
 
 .blockText span {
   word-wrap: break-word;
+  text-align: justify;
 }
 
 .headerBlock {

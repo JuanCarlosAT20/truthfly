@@ -15,6 +15,11 @@ const routes = [
         component: () => import("pages/QueHago.vue"),
       },
       {
+        path: "securelinks",
+        name: "securelinks",
+        component: () => import("pages/SecureLinks.vue"),
+      },
+      {
         path: "fakenewstest",
         name: "fakenewstest",
         component: () => import("pages/FakeNewsTest.vue"),

@@ -10,7 +10,6 @@
         <span>{{ info.textBlock }}</span>
       </q-card-section>
       <q-img class="blockInfo__img" :style="{'height': $q.screen.gt.xs ? '250px' : '150'}" :src="info.imgBlock"></q-img>
-
       <q-card-actions align="center">
         <base-button :route="info.route" />
       </q-card-actions>

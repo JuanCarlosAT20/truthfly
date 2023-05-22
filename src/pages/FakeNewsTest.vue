@@ -1,9 +1,30 @@
 <template>
   <q-page>
-    <div>
-      <!-- AQUI EMPIEZA TEST -->
-      <quiz-questions />
-      <!-- AQUI TERMINA TEST -->
+    <div style="max-width: 901px" class="container">
+      <div>
+        <div
+          style="
+            background-color: rgba(14, 6, 114, 1);
+            width: 70px;
+            height: 8px;
+          "
+        ></div>
+        <div style="font-size:40px">Test de las noticias falsas</div>
+        <div
+          style="
+            margin-top: 40px;
+            width:100%;
+            border-radius: 10px;
+            border-style: solid;
+            border-color: rgba(233, 239, 253, 1);
+            border-width: 4px;
+          "
+        >
+          <!-- AQUI EMPIEZA TEST -->
+          <quiz-questions />
+          <!-- AQUI TERMINA TEST -->
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -67,7 +88,9 @@ export default {
 
 <style scoped>
 .container {
-  margin: auto;
+  margin-top: 70px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .q-card {

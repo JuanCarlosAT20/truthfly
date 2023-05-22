@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="row" style="margin-top: 80px;">
+    <div class="row" style="margin-top: 80px; text-align: justify;">
       <div style="max-width: 901px;" class="container">
         <div
           style="
@@ -136,6 +136,9 @@
           <div style="margin-top: 30px; font-size: 20px">
             Otras opciones para denunciar noticias falsas incluyen contactar directamente al medio o persona que las publicó para pedir correcciones o aclaraciones, o reportarlas a través de las redes sociales o plataformas donde se compartieron. También puedes acudir a organismos como el Instituto Federal de Telecomunicaciones (IFT) o el Consejo Nacional para Prevenir la Discriminación (CONAPRED), si la noticia falsa incita al odio o la discriminación.
           </div>
+          <div>
+            <q-img size="70%" height="334" src="../assets/quehago2.png" style="margin-top: 30px; margin-bottom: 30px;"/>
+          </div>
         </div>
       </div>
     </div>
@@ -157,6 +160,7 @@
 
 .blockText {
   max-width: 599px;
+  text-align: justify;
 }
 
 .blockText span {

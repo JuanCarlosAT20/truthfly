@@ -64,6 +64,10 @@ const linksList = [
     link: "quehago",
   },
   {
+    title: "Fuentes seguras",
+    link: "securelinks",
+  },
+  {
     title: "Test",
     link: "fakenewstest",
   },
