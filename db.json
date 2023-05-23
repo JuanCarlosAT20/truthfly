@@ -60,7 +60,7 @@
           "imagen": ""
         },
         {
-          "texto": "Redes sociales como Facebook, Twitter o Whatsapp.",
+          "texto": "Ninguna de las anteriores",
           "imagen": ""
         }
       ],
@@ -262,7 +262,7 @@
           "imagen": ""
         }
       ],
-      "respuestasCorrectas": [3]
+      "respuestasCorrectas": [0, 1, 2, 3]
     }
   ]
 }
