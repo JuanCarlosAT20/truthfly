@@ -43,6 +43,7 @@
               <q-btn
               outline
               rounded
+              align="center"
               style="color: rgba(14, 6, 114, 1); height: 250px; width: 250px; justify-content: space-between"
               @click="seleccionarRespuesta(index)"
               :disabled="
@@ -60,6 +61,7 @@
             <q-btn
               outline
               rounded
+              align="center"
               style="color: rgba(14, 6, 114, 1); height: 250px; width: 250px; justify-content: space-between"
               @click="seleccionarRespuesta(index)"
               :disabled="
@@ -311,6 +313,7 @@ export default {
 
 .option-text {
   flex-grow: 1;
+  font-size: 16px;
 }
 
 .next-button {
@@ -393,8 +396,8 @@ export default {
 .grid-item {
   margin: 20px;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .clearfix {
