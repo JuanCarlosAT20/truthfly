@@ -83,6 +83,19 @@
           <div>
             <q-img size="70%" height="334" src="../assets/sobrenoticias2.jpg" style="margin-top: 30px; margin-bottom: 30px;"/>
           </div>
+          <div style="color: rgba(14, 6, 114, 1); font-weight: 600; margin-top: 30px; font-size: 20px">
+            Fuentes
+          </div>
+          <div
+          style="
+            background-color: rgba(14, 6, 114, 1);
+            width: 100%;
+            height: 8px;
+          "
+        ></div>
+        <div style="margin-top: 30px; font-size: 20px">
+            Camilo, D. (2020). El fenómeno de la desinformación en la era digital. Everriculum. Recuperado el día 30 de noviembre de 2022 del portal https://www.mastermarketingdigital.com/everriculum/2020/03/09/el-fenomeno-de-la-desinformacion-en-la-era-digital/
+          </div>
         </div>
       </div>
     </div>

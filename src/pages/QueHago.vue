@@ -127,6 +127,9 @@
               <br />
             </span>
           </div>
+          <div>
+            <q-img size="70%" height="334" src="../assets/consejos.png" style="margin-top: 30px; margin-bottom: 30px;" />
+          </div>
           <div style="color: rgba(14, 6, 114, 1); font-weight: 600; margin-top: 30px; font-size: 20px">
             ¿Se puede denunciar información falsa?
           </div>
@@ -138,6 +141,22 @@
           </div>
           <div>
             <q-img size="70%" height="334" src="../assets/quehago2.png" style="margin-top: 30px; margin-bottom: 30px;"/>
+          </div>
+          <div style="color: rgba(14, 6, 114, 1); font-weight: 600; margin-top: 30px; font-size: 20px">
+            Fuentes
+          </div>
+          <div
+          style="
+            background-color: rgba(14, 6, 114, 1);
+            width: 100%;
+            height: 8px;
+          "
+        ></div>
+        <div style="margin-top: 30px; font-size: 20px">
+            ¿Cómo detectar «fake news» en Colombia? (s. f.). UNICEF. https://www.unicef.org/colombia/casicaigo?fbclid=IwAR0nk9YpeItDihQaBNE_mjiekPCy2U7FrwzMom0y1Aq7jU7Z9RpSbfxfZfw
+          </div>
+        <div style="margin-top: 30px; font-size: 20px">
+            ANUIES. (2019, Augusto 19). Asociación Nacional de Universidades e Instituciones de Educación Superior. Las fake news, eficaces por su contenido emocional - Tamburrino Widner, I. ¿Cómo formular la hipótesis de mi tesis? – Aprendizaje U. Chile. Aprendizaje. Recuperado el 20 de noviembre de https://aprendizaje.uchile.cl/recursos-para-leer-escribir-y-hablar-en-la-universidad/profundiza/profundiza-en-la-tesis/hipotesis/
           </div>
         </div>
       </div>

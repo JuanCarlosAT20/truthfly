@@ -251,7 +251,6 @@ export default {
 <style scoped>
 .quiz-container {
   width:100%;
-  margin: 0 auto;
   padding: 5%;
   font-family: Arial, sans-serif;
 }
@@ -283,6 +282,8 @@ export default {
 
 .option-container {
   margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .option-button {
