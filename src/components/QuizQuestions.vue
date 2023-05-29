@@ -5,13 +5,15 @@
         Correo electrónico:
         <input type="email" v-model="correo" required />
       </label>
-      <q-btn type="submit" outline rounded class="start-button right-align">Comenzar el test</q-btn>
+      <q-btn type="submit" outline rounded class="start-button right-align"
+        >Comenzar el test</q-btn
+      >
     </form>
     <div v-else-if="!preguntasRespondidas">
       <form @submit="guardarDatos" class="info-form">
         <label>
           Edad:
-          <input type="number" v-model="edad" required />
+          <input type="number" v-model="edad" min="0" required />
         </label>
         <label>
           Género:
@@ -22,129 +24,141 @@
             <option value="otro">Otro</option>
           </select>
         </label>
-        <q-btn type="submit" outline rounded class="start-button right-align">Guardar</q-btn>
+        <q-btn type="submit" outline rounded class="start-button right-align"
+          >Guardar</q-btn
+        >
       </form>
     </div>
     <div v-else>
       <div v-if="!mostrarPuntaje">
         <h1 class="question">{{ preguntas[preguntaActual].pregunta }}</h1>
-      <div
-        class="container"
-            style="
-              background-color: rgba(233, 239, 253, 1);
-              height: 2px;
-            "
-      ></div>
+        <div
+          class="container"
+          style="background-color: rgba(233, 239, 253, 1); height: 2px"
+        ></div>
 
-      <div class="option-container">
-        <div v-for="(opcion, index) in preguntas[preguntaActual].opciones" :key="'option-' + index">
-          <template v-if="opcion.imagen===''">
-            <div class="grid-item">
-              <q-btn
-              outline
-              rounded
-              align="center"
-              style="color: rgba(14, 6, 114, 1); height: 250px; width: 250px; justify-content: space-between"
-              @click="seleccionarRespuesta(index)"
-              :disabled="
-                respuestas[preguntaActual] !== undefined &&
-                respuestas[preguntaActual] !== index
-              "
-              class="option-button right-align"
-            >
-              <span class="option-text">{{ opcion.texto }}</span>
-            </q-btn>
-            </div>
-          </template>
-          <template v-else>
-          <div class="grid-item">
-            <q-btn
-              outline
-              rounded
-              align="center"
-              style="color: rgba(14, 6, 114, 1); height: 250px; width: 250px; justify-content: space-between"
-              @click="seleccionarRespuesta(index)"
-              :disabled="
-                respuestas[preguntaActual] !== undefined &&
-                respuestas[preguntaActual] !== index
-              "
-              class="option-button right-align"
-            >
-              <q-img
-                v-if="opcion.imagen"
-                :src="opcion.imagen"
-                alt="imagen"
-                class="option-image"
-                style="height: 200px; width: 200px"
-              ></q-img>
-              <span class="option-text">{{ opcion.texto }}</span>
-            </q-btn>
+        <div class="option-container">
+          <div
+            v-for="(opcion, index) in preguntas[preguntaActual].opciones"
+            :key="'option-' + index"
+          >
+            <template v-if="opcion.imagen === ''">
+              <div class="grid-item">
+                <q-btn
+                  outline
+                  rounded
+                  align="center"
+                  style="
+                    color: rgba(14, 6, 114, 1);
+                    height: 250px;
+                    width: 250px;
+                    justify-content: space-between;
+                  "
+                  @click="seleccionarRespuesta(index)"
+                  :disabled="
+                    respuestas[preguntaActual] !== undefined &&
+                    respuestas[preguntaActual] !== index
+                  "
+                  class="option-button right-align"
+                >
+                  <span class="option-text">{{ opcion.texto }}</span>
+                </q-btn>
+              </div>
+            </template>
+            <template v-else>
+              <div class="grid-item">
+                <q-btn
+                  outline
+                  rounded
+                  align="center"
+                  style="
+                    color: rgba(14, 6, 114, 1);
+                    height: 250px;
+                    width: 250px;
+                    justify-content: space-between;
+                  "
+                  @click="seleccionarRespuesta(index)"
+                  :disabled="
+                    respuestas[preguntaActual] !== undefined &&
+                    respuestas[preguntaActual] !== index
+                  "
+                  class="option-button right-align"
+                >
+                  <q-img
+                    v-if="opcion.imagen"
+                    :src="opcion.imagen"
+                    alt="imagen"
+                    class="option-image"
+                    style="height: 200px; width: 200px"
+                  ></q-img>
+                  <span class="option-text">{{ opcion.texto }}</span>
+                </q-btn>
+              </div>
+            </template>
           </div>
-        </template>
         </div>
-      </div>
-      <q-btn
-        v-if="!esUltimaPregunta"
-        @click="siguientePregunta"
-        label="Siguiente"
-        outline
-        rounded
-        class="next-button right-align"
-      />
-      <q-btn
+        <q-btn
+          v-if="!esUltimaPregunta"
+          @click="siguientePregunta"
+          label="Siguiente"
+          outline
+          rounded
+          class="next-button right-align"
+        />
+        <q-btn
           v-if="!mostrarPuntaje && esUltimaPregunta"
           @click="mostrarResultados"
           label="Mostrar resultados"
-          outline 
+          outline
           rounded
           class="show-results-button right-align"
         />
       </div>
       <div v-else>
-          <h5 class="quiz-completed">¡Terminaste el quiz!</h5>
-          <p class="final-score">
-            Tu puntaje final es: {{ puntaje }} / {{ preguntas.length }}
-          </p>
-          <p class="correct-answers">Respuestas correctas:</p>
-          <ul class="answers-list">
-            <li
-              v-for="(pregunta, index) in preguntas"
-              :key="index"
-              class="question-answer"
-            >
-              {{ pregunta.pregunta }}:
-              <ul>
-                <li
-                  v-for="(opcion, i) in pregunta.opciones"
-                  :key="i"
-                  :class="[
-                    { 'selected-answer': respuestas[index] === i },
-                    {
-                      'correct-answer':
-                        pregunta.respuestasCorrectas.includes(i) &&
-                        respuestas[index] === i,
-                    },
-                    {
-                      'incorrect-answer':
-                        !pregunta.respuestasCorrectas.includes(i) &&
-                        respuestas[index] === i,
-                    },
-                  ]"
-                >
-                  {{ pregunta.respuestasCorrectas.includes(i) ? "✔️" : "❌" }}
-                  {{ opcion.texto }}
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <q-btn
-            v-if="mostrarPuntaje"
-            @click="reiniciarTest"
-            label="Realizar el test nuevamente"
-            outline 
-            rounded
-            class="restart-button right-align"
-          />
+        <h5 class="quiz-completed">¡Terminaste el quiz!</h5>
+        <p class="final-score">
+          Tu puntaje final es: {{ puntaje }} / {{ preguntas.length }}
+        </p>
+        <p class="correct-answers">Respuestas correctas:</p>
+        <ul class="answers-list">
+          <li
+            v-for="(pregunta, index) in preguntas"
+            :key="index"
+            class="question-answer"
+          >
+            {{ pregunta.pregunta }}:
+            <ul>
+              <li
+                v-for="(opcion, i) in pregunta.opciones"
+                :key="i"
+                :class="[
+                  { 'selected-answer': respuestas[index] === i },
+                  {
+                    'correct-answer':
+                      pregunta.respuestasCorrectas.includes(i) &&
+                      respuestas[index] === i,
+                  },
+                  {
+                    'incorrect-answer':
+                      !pregunta.respuestasCorrectas.includes(i) &&
+                      respuestas[index] === i,
+                  },
+                ]"
+              >
+                {{ pregunta.respuestasCorrectas.includes(i) ? "✔️" : "❌" }}
+                {{ opcion.texto }}
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <q-btn
+          v-if="mostrarPuntaje"
+          @click="reiniciarTest"
+          label="Realizar el test nuevamente"
+          outline
+          rounded
+          class="restart-button right-align"
+        />
       </div>
     </div>
   </div>
@@ -250,22 +264,22 @@ export default {
 </script>
 <style scoped>
 .quiz-container {
-  width:100%;
+  width: 100%;
   padding: 5%;
   font-family: Arial, sans-serif;
 }
 
-.container{
- margin-bottom: 20px;
+.container {
+  margin-bottom: 20px;
 }
 
 .start-form {
   text-align: center;
-  width:100%;
+  width: 100%;
 }
 
 .start-button {
-  text-transform:none;
+  text-transform: none;
   display: flex;
   margin-top: 20px;
   padding: 10px 10px;
@@ -287,7 +301,7 @@ export default {
 }
 
 .option-button {
-  text-transform:none;
+  text-transform: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,7 +332,7 @@ export default {
 }
 
 .next-button {
-  text-transform:none;
+  text-transform: none;
   display: block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -328,7 +342,7 @@ export default {
 }
 
 .show-results-button {
-  text-transform:none;
+  text-transform: none;
   display: block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -372,7 +386,7 @@ export default {
 }
 
 .restart-button {
-  text-transform:none;
+  text-transform: none;
   display: block;
   margin-top: 20px;
   padding: 10px 20px;

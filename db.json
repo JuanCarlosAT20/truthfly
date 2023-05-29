@@ -155,18 +155,18 @@
       "respuestasCorrectas": [1]
     },
     {
-      "pregunta": "8. ¿Cuál es una herramienta útil para confirmar la veracidad de una noticia?",
+      "pregunta": "8. ¿Cuál es una señal común de una noticia falsa?",
       "opciones": [
         {
-          "texto": "Leer solo el titular.",
+          "texto": "Falta de citas o referencias a fuentes confiables.",
           "imagen": ""
         },
         {
-          "texto": "Percatarse del medio de difusión.",
+          "texto": "Presencia de imágenes llamativas.",
           "imagen": ""
         },
         {
-          "texto": "Basar la búsqueda de información en cuentas no verificadas.",
+          "texto": "Publicación en redes sociales populares.",
           "imagen": ""
         },
         {
@@ -174,7 +174,7 @@
           "imagen": ""
         }
       ],
-      "respuestasCorrectas": [1]
+      "respuestasCorrectas": [0]
     },
     {
       "pregunta": "9. ¿Qué se recomienda hacer al momento de leer y compartir una noticia?",
@@ -260,9 +260,13 @@
         {
           "texto": "Todas las anteriores.",
           "imagen": ""
+        },
+        {
+          "texto": "Ninguna de las anteriores",
+          "imagen": ""
         }
       ],
-      "respuestasCorrectas": [0, 1, 2, 3]
+      "respuestasCorrectas": [0, 1, 2, 3, 4]
     }
   ]
 }
