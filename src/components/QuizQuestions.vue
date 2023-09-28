@@ -1,4 +1,5 @@
 <template>
+  //AQUI SE RECOPILA LA INFO DEL USUARIO
   <div class="quiz-container">
     <form v-if="!testIniciado" @submit="comenzarTest">
       <label>
@@ -31,6 +32,7 @@
     </div>
     <div v-else>
       <div v-if="!mostrarPuntaje">
+        //ACA YA SE MUESTRA LA PREGUNTA, MUESTRA LA QUE ESTE EN EL INDICE ACTUAL DEL ARREGLO DE PREGUNTAS
         <h1 class="question">{{ preguntas[preguntaActual].pregunta }}</h1>
         <div
           class="container"
@@ -38,6 +40,7 @@
         ></div>
 
         <div class="option-container">
+          //LUEGO EL CICLO PARA LAS POSIBLES RESPUESTAS QUE TRAE EL MISMO ARREGLO DE PREGUNTAS EN EL INDICE ACTUAL
           <div
             v-for="(opcion, index) in preguntas[preguntaActual].opciones"
             :key="'option-' + index"
@@ -54,6 +57,7 @@
                     width: 250px;
                     justify-content: space-between;
                   "
+                  //ACA SE LLAMA AL METODO CUANDO SE DA CLICK A UNA RESPUESTA PARA GUARDAR EL INDICE DE ESA RESPUESTA EN EL ARREGLO DE RESPUESTAS(cando son imagenes)
                   @click="seleccionarRespuesta(index)"
                   :disabled="
                     respuestas[preguntaActual] !== undefined &&
@@ -77,6 +81,7 @@
                     width: 250px;
                     justify-content: space-between;
                   "
+                  //ACA SE LLAMA AL METODO CUANDO SE DA CLICK A UNA RESPUESTA PARA GUARDAR EL INDICE DE ESA RESPUESTA EN EL ARREGLO DE RESPUESTAS(cando es texto)
                   @click="seleccionarRespuesta(index)"
                   :disabled="
                     respuestas[preguntaActual] !== undefined &&
@@ -97,6 +102,7 @@
             </template>
           </div>
         </div>
+        //DESPUES DE SELECCIONAR UNA RESPUESTA Y SI NO ES LA ULTIMA PREGUNTA, SE DEBE DAR A SIGUIENTE Y SE LLAMA EL METODO "siguientePregunta" DONDE SE COMPARA LA RESPUESTA SI ES CORRECTA O NO, SE SUMA EL PUNTAJE Y SE AVANZA EL INDICE
         <q-btn
           v-if="!esUltimaPregunta"
           @click="siguientePregunta"
@@ -105,6 +111,7 @@
           rounded
           class="next-button right-align"
         />
+        //SI YA ES LA ULTIMA PREGUNTA, LLAMA EL METODO "mostrarResultados" DONDE HACE LA COMPARACION DE LA ULTIMA PREGUNTA, LUEGO GUARDA LAS RESPUESTAS QUE SE ENVIARAN EN UN ARREGLO DONDE SE JUNTAN LAS PREGUNTAS Y LAS RESPUESTAS SELECCIONADAS Y ENVIA A LA BASE DE DATOS CADA DATO RECOPILADO
         <q-btn
           v-if="!mostrarPuntaje && esUltimaPregunta"
           @click="mostrarResultados"
